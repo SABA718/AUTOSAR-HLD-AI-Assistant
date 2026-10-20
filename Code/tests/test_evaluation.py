@@ -93,7 +93,7 @@ class TestPhase8Evaluation:
 
     def test_golden_dataset_structure(self) -> None:
         """Verify the golden dataset JSON exists and contains 10 items."""
-        dataset_path = Path(__file__).parent.parent / "data" / "golden_dataset.json"
+        dataset_path = Path(__file__).resolve().parents[2] / "Evaluation_Results" / "golden_dataset.json"
         assert dataset_path.exists(), "golden_dataset.json must exist in data directory"
 
         import json
@@ -110,7 +110,7 @@ class TestPhase8Evaluation:
     def test_full_golden_dataset_evaluation(self, indexed_test_pipeline) -> None:
         """Run evaluator across all 10 questions and assert key metrics."""
         evaluator, _ = indexed_test_pipeline
-        dataset_path = Path(__file__).parent.parent / "data" / "golden_dataset.json"
+        dataset_path = Path(__file__).resolve().parents[2] / "Evaluation_Results" / "golden_dataset.json"
 
         report = evaluator.evaluate_dataset(dataset_path=dataset_path)
 

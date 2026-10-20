@@ -1,6 +1,6 @@
 """Seed sample PDF script for demo preparation (Phase 8 Stage 15).
 
-Generates `data/samples/AUTOSAR_HLD_Sample_BrakingSystem.pdf` for live demo execution.
+Generates `Input_Data/AUTOSAR_HLD_Sample_BrakingSystem.pdf` for live demo execution.
 """
 
 from pathlib import Path
@@ -48,7 +48,7 @@ def generate_sample_pdf(output_path: Path) -> Path:
 
 
 if __name__ == "__main__":
-    sample_dir = Path(__file__).parent.parent / "data" / "samples"
+    sample_dir = Path(__file__).resolve().parents[2] / "Input_Data"
     dest = sample_dir / "AUTOSAR_HLD_Sample_BrakingSystem.pdf"
     generate_sample_pdf(dest)
     print(f"Sample PDF generated at: {dest}")
