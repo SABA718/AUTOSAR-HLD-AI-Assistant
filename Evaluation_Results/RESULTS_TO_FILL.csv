@@ -1,0 +1,1 @@
+question_id,document_id,date_utc,provider,model,top_k,relevance_threshold,expected_behavior,actual_answer,retrieved_chunk_ids,citation_ids_valid,claims_supported_by_pdf,refusal_correct,latency_seconds,result,notes
