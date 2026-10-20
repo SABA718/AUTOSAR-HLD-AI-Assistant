@@ -1,0 +1,44 @@
+name: Build academic Word and PDF submissions
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build_academic_docs.yml'
+      - 'scripts/build_academic_documents.py'
+      - 'Synopsis/**/*.md'
+      - 'Input_Data/**/*.md'
+      - 'Code/**/*.md'
+      - 'Model_Prompts_Config/**/*.md'
+      - 'Evaluation_Results/**/*.md'
+      - 'Documentation/**/*.md'
+      - 'Declarations/**/*.md'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install document libraries
+        run: python -m pip install python-docx reportlab
+      - name: Generate Word and PDF files (Times New Roman 12pt)
+        run: python scripts/build_academic_documents.py
+      - name: Commit generated files
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- Synopsis Input_Data Code Model_Prompts_Config Evaluation_Results Documentation Declarations
+          $pending = git diff --cached --name-only
+          if ($pending) {
+            git commit -m "Generate academic DOCX and PDF files in Times New Roman 12pt"
+            git push origin HEAD:main
+          } else {
+            Write-Output "Generated files already up to date"
+          }
