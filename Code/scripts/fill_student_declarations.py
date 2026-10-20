@@ -11,7 +11,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 from reportlab.lib import colors
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[2]
 DEST=ROOT/"Declarations"
 NAME="Sabareesh S"
 REGISTER="127003218"
@@ -42,12 +42,11 @@ def save(filename,story):
     print("Created:",output.relative_to(ROOT))
 def footer():
     return [Spacer(1,14),para("Place: "+PLACE),para("Date: "+DATE),
-        para("Signature (typed, as supplied by student): "+NAME)]
+        para("Signature: "+NAME)]
 academic=common("Academic Integrity Declaration")
 academic += [
     para("I declare that this submission accurately describes my own work and contributions. External source code, datasets, pretrained models, and supporting references have been credited. Assistance from generative AI and coding agents is disclosed in the accompanying AI Tool Usage Declaration."),
     para("I have reviewed the project's behavior and test evidence to the extent stated in the report. I have not knowingly fabricated performance measurements or falsely represented model training."),
-    para("This declaration is based on the student's supplied particulars. The typed signature below is not a handwritten or independently authenticated signature."),
 ]+footer()
 save("Academic_Integrity_Declaration.pdf",academic)
 ai=common("AI Tool Usage Declaration")
@@ -69,6 +68,5 @@ t.setStyle(TableStyle([("GRID",(0,0),(-1,-1),.5,colors.grey),
 ai += [t,Spacer(1,12),
     para("Student verification: The implementation is subject to source-code inspection, unit/integration tests, and manual evaluation of generated answers and source citations. A valid citation ID alone is not proof of factual correctness."),
     para("I take responsibility for reviewing the AI-assisted work and complying with the institution's academic integrity and AI-use regulations."),
-    para("The typed signature below is provided as text requested by the student, not a simulated handwritten signature."),
 ] + footer()
 save("AI_Tool_Usage_Declaration.pdf",ai)
