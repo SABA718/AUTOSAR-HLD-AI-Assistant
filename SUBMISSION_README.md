@@ -1,22 +1,18 @@
-# Case Study 1 — Academic Submission
+# AUTOSAR HLD AI Assistant — Case Study 1 Submission
 
-**Project:** AUTOSAR HLD AI Assistant: Grounded AI for High-Level Design Analysis, Engineering Q&A and Architecture Exploration
+Required academic folder structure (exactly eight folders):
 
-This GitHub repository contains the working source code at root and eight required academic folders. **The academic documents are drafts awaiting final test evidence and student signatures.** No video has been prepared at the student's request.
-
-| Required folder | Contents |
+| Folder | Contents |
 |---|---|
-| [Synopsis](Synopsis/) | Project synopsis, print layout |
-| [Input_Data](Input_Data/) | Sample data and golden dataset references |
-| [Code](Code/) | Verified index linking to actual live code |
-| [Model_Prompts_Config](Model_Prompts_Config/) | Model inventory, source prompt explanation and safe configuration |
-| [Evaluation_Results](Evaluation_Results/) | Grounded test protocol, results status and blank results sheet |
-| [Documentation](Documentation/) | Technical report, architecture, workflows, module guide, setup, responsible AI |
-| [Video](Video/) | Deferred; no fabricated recording |
-| [Declarations](Declarations/) | Unsigned academic integrity and AI-tool usage declarations |
+| Synopsis/ | Project_Synopsis.pdf |
+| Input_Data/ | README.md (sample PDF under repository data/samples/) |
+| Code/ | README.md (working Python source remains at repository root) |
+| Model_Prompts_Config/ | Model_and_Prompt_Configuration.pdf and SAFE_CONFIG_REFERENCE.env.example |
+| Evaluation_Results/ | Evaluation_Report.pdf and RESULTS_TO_FILL.csv |
+| Documentation/ | Technical_Report.pdf (comprehensive consolidated report and appendices) |
+| Video/ | README.md (demo deferred) |
+| Declarations/ | Academic_Integrity_Declaration.pdf and AI_Tool_Usage_Declaration.pdf |
 
-**Font:** GitHub Markdown styling is controlled by GitHub. The printable `*_PRINT_12PT.html` versions use `font-family: "Times New Roman"; font-size: 12pt`; use the browser's Print / Save as PDF command with Times New Roman installed.
+Formal PDF documents use Times New Roman at 12 pt. Declaration templates remain unsigned and require student review. Evaluation records distinguish historical observations from verified real-model runs.
 
-**Security:** Never upload `.env`, API keys, `.venv`, local SQLite/Chroma caches or private OEM documentation. The source code is already checked in at repository root and should not be duplicated unnecessarily.
-
-**To finalize:** fill identity placeholders; run and record dated tests; independently verify real-Gemini answers and citations; sign both declarations; supply PDF/Word binaries from the prepared student package if required; add video later.
+The live application source code remains unchanged outside these submission folders. Do not upload API credentials, .env, private OEM data or local indexes.
