@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Testing cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local data and databases
+data/chroma_db/*
+!data/chroma_db/.gitkeep
+data/documents/*
+!data/documents/.gitkeep
+*.db
+*.sqlite3
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

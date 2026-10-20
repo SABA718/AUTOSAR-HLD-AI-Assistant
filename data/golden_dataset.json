@@ -1,0 +1,107 @@
+{
+  "dataset_version": "1.0",
+  "domain": "AUTOSAR High-Level Design (HLD) Specifications",
+  "document_id": "AUTOSAR_HLD_Sample_BrakingSystem",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the primary architectural responsibility of SWC_BrakingController?",
+      "is_answerable": true,
+      "expected_chunk_ids": ["AUTOSAR_HLD_Sample_BrakingSystem_p1_c0"],
+      "expected_keywords": ["SWC_BrakingController", "deceleration", "arbitration"],
+      "expected_evidence_page": 1,
+      "expected_section": "1.0 Architecture Overview",
+      "expected_answer_summary": "SWC_BrakingController is responsible for vehicle deceleration arbitration."
+    },
+    {
+      "id": "q2",
+      "question": "What port provides the current hydraulic pressure reading?",
+      "is_answerable": true,
+      "expected_chunk_ids": ["AUTOSAR_HLD_Sample_BrakingSystem_p2_c1"],
+      "expected_keywords": ["P_BrakePressure", "Provided", "If_BrakePressure"],
+      "expected_evidence_page": 2,
+      "expected_section": "2.0 Port Specifications",
+      "expected_answer_summary": "P_BrakePressure is a Provided port that broadcasts current hydraulic pressure via If_BrakePressure."
+    },
+    {
+      "id": "q3",
+      "question": "Which port on SWC_BrakingController receives driver brake demand, and what is its direction?",
+      "is_answerable": true,
+      "expected_chunk_ids": ["AUTOSAR_HLD_Sample_BrakingSystem_p2_c1"],
+      "expected_keywords": ["R_PedalPosition", "Required"],
+      "expected_evidence_page": 2,
+      "expected_section": "2.0 Port Specifications",
+      "expected_answer_summary": "R_PedalPosition is a Required port receiving driver brake demand."
+    },
+    {
+      "id": "q4",
+      "question": "What interface connects to port P_BrakePressure?",
+      "is_answerable": true,
+      "expected_chunk_ids": ["AUTOSAR_HLD_Sample_BrakingSystem_p2_c1"],
+      "expected_keywords": ["If_BrakePressure"],
+      "expected_evidence_page": 2,
+      "expected_section": "2.0 Port Specifications",
+      "expected_answer_summary": "The If_BrakePressure Sender-Receiver interface connects to P_BrakePressure."
+    },
+    {
+      "id": "q5",
+      "question": "What are the chassis sensors and powertrain actuators communicating with SWC_BrakingController?",
+      "is_answerable": true,
+      "expected_chunk_ids": ["AUTOSAR_HLD_Sample_BrakingSystem_p1_c0"],
+      "expected_keywords": ["chassis", "sensors", "powertrain", "actuators"],
+      "expected_evidence_page": 1,
+      "expected_section": "1.0 Architecture Overview",
+      "expected_answer_summary": "SWC_BrakingController interacts with chassis sensors and powertrain actuators."
+    },
+    {
+      "id": "q6",
+      "question": "What is the interface type of If_PedalPosition?",
+      "is_answerable": true,
+      "expected_chunk_ids": ["AUTOSAR_HLD_Sample_BrakingSystem_p2_c1"],
+      "expected_keywords": ["If_PedalPosition"],
+      "expected_evidence_page": 2,
+      "expected_section": "2.0 Port Specifications",
+      "expected_answer_summary": "If_PedalPosition is an AUTOSAR interface used by R_PedalPosition."
+    },
+    {
+      "id": "q7",
+      "question": "List all ports defined in the port specifications table for SWC_BrakingController.",
+      "is_answerable": true,
+      "expected_chunk_ids": ["AUTOSAR_HLD_Sample_BrakingSystem_p2_c1"],
+      "expected_keywords": ["P_BrakePressure", "R_PedalPosition"],
+      "expected_evidence_page": 2,
+      "expected_section": "2.0 Port Specifications",
+      "expected_answer_summary": "The defined ports are P_BrakePressure (Provided) and R_PedalPosition (Required)."
+    },
+    {
+      "id": "q8",
+      "question": "What is the quantum encryption algorithm and cryptographic seed used for satellite uplink telematics?",
+      "is_answerable": false,
+      "expected_chunk_ids": [],
+      "expected_keywords": [],
+      "expected_evidence_page": null,
+      "expected_section": null,
+      "expected_answer_summary": "Based on the provided AUTOSAR specification, there is insufficient evidence to answer this question."
+    },
+    {
+      "id": "q9",
+      "question": "What is the turbofan jet engine afterburner bypass pressure ratio in supersonic flight?",
+      "is_answerable": false,
+      "expected_chunk_ids": [],
+      "expected_keywords": [],
+      "expected_evidence_page": null,
+      "expected_section": null,
+      "expected_answer_summary": "Based on the provided AUTOSAR specification, there is insufficient evidence to answer this question."
+    },
+    {
+      "id": "q10",
+      "question": "How many lithium ion battery cells are connected in parallel inside the high-voltage traction battery pack?",
+      "is_answerable": false,
+      "expected_chunk_ids": [],
+      "expected_keywords": [],
+      "expected_evidence_page": null,
+      "expected_section": null,
+      "expected_answer_summary": "Based on the provided AUTOSAR specification, there is insufficient evidence to answer this question."
+    }
+  ]
+}
